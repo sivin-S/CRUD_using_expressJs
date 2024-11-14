@@ -4,7 +4,8 @@
   "description": "testing postman..",
   "main": "server.js",
   "scripts": {
-    "devStart": "nodemon server.mjs"
+    "devStart": "nodemon server.mjs",
+    "start": "node server.mjs"
   },
   "keywords": [
     "api_testing"
