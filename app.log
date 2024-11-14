@@ -1,0 +1,24 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"This is an info message","timestamp":"2024-11-14T12:52:17.428Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"This is an error message","timestamp":"2024-11-14T12:52:17.431Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"This is a warning message","timestamp":"2024-11-14T12:52:17.431Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"5.922\"}","timestamp":"2024-11-14T12:52:17.436Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"This is an info message","timestamp":"2024-11-14T12:52:25.334Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"This is an error message","timestamp":"2024-11-14T12:52:25.335Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"This is a warning message","timestamp":"2024-11-14T12:52:25.336Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"3.016\"}","timestamp":"2024-11-14T12:52:25.338Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/o\",\"status\":\"404\",\"responseTime\":\"0.719\"}","timestamp":"2024-11-14T12:52:35.776Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/product?\",\"status\":\"201\",\"responseTime\":\"2.378\"}","timestamp":"2024-11-14T12:53:24.967Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/product?\",\"status\":\"201\",\"responseTime\":\"0.922\"}","timestamp":"2024-11-14T12:53:28.115Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/product?\",\"status\":\"201\",\"responseTime\":\"1.203\"}","timestamp":"2024-11-14T12:53:33.512Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/product?\",\"status\":\"201\",\"responseTime\":\"1.185\"}","timestamp":"2024-11-14T12:53:36.312Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/product?\",\"status\":\"201\",\"responseTime\":\"0.759\"}","timestamp":"2024-11-14T12:53:45.363Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"This is an info message","timestamp":"2024-11-14T12:54:16.307Z"}
+{"level":"\u001b[31merror\u001b[39m","message":"This is an error message","timestamp":"2024-11-14T12:54:16.308Z"}
+{"level":"\u001b[33mwarn\u001b[39m","message":"This is a warning message","timestamp":"2024-11-14T12:54:16.308Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"2.862\"}","timestamp":"2024-11-14T12:54:16.311Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/product?\",\"status\":\"201\",\"responseTime\":\"1.137\"}","timestamp":"2024-11-14T12:54:16.389Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"PUT\",\"url\":\"/product/4?name=%27nike%27&price=899\",\"status\":\"204\",\"responseTime\":\"0.676\"}","timestamp":"2024-11-14T12:54:16.486Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/products/\",\"status\":\"200\",\"responseTime\":\"0.345\"}","timestamp":"2024-11-14T12:54:16.574Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"PATCH\",\"url\":\"/product/0?name=%22guip%22\",\"status\":\"204\",\"responseTime\":\"0.380\"}","timestamp":"2024-11-14T12:54:16.649Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/products/\",\"status\":\"200\",\"responseTime\":\"0.191\"}","timestamp":"2024-11-14T12:54:16.726Z"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"DELETE\",\"url\":\"/0\",\"status\":\"204\",\"responseTime\":\"0.456\"}","timestamp":"2024-11-14T12:54:16.836Z"}

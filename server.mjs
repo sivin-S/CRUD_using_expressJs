@@ -1,14 +1,42 @@
 import express, { json } from 'express'
 const app = express()
 import 'dotenv/config'
+//  logs 
+import logger from "./logger.mjs";
+import morgan from "morgan";
 
 app.use(express.urlencoded({extended:true})) // decoding form data transmission data to human readable
 app.use(express.json()) //parsing json data 
+
+
+// logs 
+const morganFormat = ":method :url :status :response-time ms";
+
+app.use(
+  morgan(morganFormat, {
+    stream: {
+      write: (message) => {
+        console.log("message >",message)
+        const logObject = {
+          method: message.split(" ")[0],
+          url: message.split(" ")[1],
+          status: message.split(" ")[2],
+          responseTime: message.split(" ")[3],
+        };
+        logger.info(JSON.stringify(logObject));
+      },
+    },
+  })
+);
+
+
 
 /*
           ###################  CRUD operations  ###############   & shop is footwear  products     
    `Note:  app.get(  ...more  )  like regex (IM)   `
 */  
+
+
 
 // data stored in array 
 const products=[]
@@ -17,6 +45,15 @@ let id=0;
 // get request 
 app.get('/',function(req,res){
     try {
+        
+
+
+logger.info("This is an info message");
+logger.error("This is an error message");
+logger.warn("This is a warning message");
+logger.debug("This is a debug message");
+
+
         res.type('json')
  return   res.status(200).send({message:'welcome to shop'})
     } catch (error) {

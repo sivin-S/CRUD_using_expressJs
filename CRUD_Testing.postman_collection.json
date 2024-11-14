@@ -1,0 +1,279 @@
+{
+	"info": {
+		"_postman_id": "47165c70-7781-4c38-99ed-6565344d262a",
+		"name": "CRUD_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26433414"
+	},
+	"item": [
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url&port}}/",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "The API returns a JSON response with a status code of 200. The response schema is as follows:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"message\": {\n            \"type\": \"string\"\n        }\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "upload_product",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"{{$randomProduct}}\",\r\n    \"price\": {{$randomPrice}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url&port}}/product?",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				},
+				"description": "The endpoint makes an HTTP POST request to {{url&port}}/product to create a new product. The request body should be in raw JSON format with \"name\" and \"price\" as the keys.\n\n### Request Body\n\n- name (string): The name of the product.\n    \n- price (number): The price of the product.\n    \n\n### Response\n\nThe response is in JSON format with the following schema:\n\n``` json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"message\": {\n      \"type\": \"string\"\n    },\n    \"data\": {\n      \"type\": \"object\",\n      \"properties\": {\n        \"product\": {\n          \"type\": \"array\",\n          \"items\": {\n            \"type\": \"object\",\n            \"properties\": {\n              \"id\": {\n                \"type\": \"number\"\n              },\n              \"product\": {\n                \"type\": \"object\",\n                \"properties\": {\n                  \"name\": {\n                    \"type\": \"string\"\n                  },\n                  \"price\": {\n                    \"type\": \"number\"\n                  }\n                }\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "update_product_details",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url&port}}/product/4?name='nike'&price=899",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						"product",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "'nike'"
+						},
+						{
+							"key": "price",
+							"value": "899"
+						}
+					]
+				},
+				"description": "The `PUT` request updates the product with ID `0` with the provided `name` and `price` query parameters.\n\n### Response\n\nThe response for this request is a `204` status code with `text/xml` as the `Content-Type`. Since the response body is `null`, the JSON schema for this response would be an empty object `{}`."
+			},
+			"response": []
+		},
+		{
+			"name": "shop",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url&port}}/products/",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						"products",
+						""
+					]
+				},
+				"description": "The `GET /products/` endpoint retrieves a list of products. The response is in JSON format and has a schema as follows:\n\n``` json\n[\n  {\n    \"id\": 0,\n    \"product\": {\n      \"name\": \"\",\n      \"price\": 0\n    }\n  }\n]\n\n ```\n\nThis schema represents an array of objects, where each object has an `id` and a `product` object containing `name` and `price` properties."
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url&port}}/product/0?name=\"guip\"",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						"product",
+						"0"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "\"guip\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "one_product",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>ID</th>\r",
+							"        <th>Product Name</th>\r",
+							"        <th>Price</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{id}}</td>\r",
+							"            <td>{{product.name}}</td>\r",
+							"            <td>{{product.price}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());\r",
+							"\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Response has the required fields - id, product name, and price\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('array');\r",
+							"    responseData.forEach(function(item) {\r",
+							"        pm.expect(item).to.have.property('id');\r",
+							"        pm.expect(item.product).to.have.property('name');\r",
+							"        pm.expect(item.product).to.have.property('price');\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Id should be a non-negative integer\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    responseData.forEach(function(item) {\r",
+							"        pm.expect(item.id).to.be.a('number').and.to.be.at.least(0);\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Product name is a non-empty string\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('array');\r",
+							"    responseData.forEach(function(item) {\r",
+							"        pm.expect(item.product.name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Product name should not be empty\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Price is a non-negative number\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.be.an('array');\r",
+							"    responseData.forEach(function(item) {\r",
+							"        pm.expect(item.product.price).to.be.a('number').and.to.be.at.least(0, \"Price should be a non-negative number\");\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url&port}}/products/",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						"products",
+						""
+					]
+				},
+				"description": "# Get Products\n\nThis endpoint retrieves a list of products.\n\n## Request\n\n### Headers\n\n- No specific headers are required for this request.\n    \n\n### Body\n\n- There is no request body for this GET request.\n    \n\n## Response\n\n### Headers\n\n- Content-Type: application/json\n    \n\n### Body\n\nThe response body contains an array of products, where each product has an 'id' and 'product' object with 'name' and 'price' properties.\n\nExample response:\n\n``` json\n[\n    {\n        \"id\": 0,\n        \"product\": {\n            \"name\": \"\",\n            \"price\": 0\n        }\n    }\n]\n\n ```\n\nThis endpoint retrieves a list of products.\n\n## Request\n\nNo request body is required for this endpoint.\n\n### Headers\n\n- Content-Type: Not applicable\n    \n\n## Response\n\nThe response will be a JSON array containing product objects with the following fields:\n\n- id (number): The unique identifier of the product\n    \n- product (object): The details of the product, including:\n    \n    - name (string): The name of the product\n        \n    - price (number): The price of the product"
+			},
+			"response": []
+		},
+		{
+			"name": "delete_product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url&port}}/0",
+					"host": [
+						"{{url&port}}"
+					],
+					"path": [
+						"0"
+					]
+				},
+				"description": "The API endpoint sends an HTTP DELETE request to the specified URL. Upon successful execution, the response returns a status code of 204 and a content type of text/xml. As per the user's request, the response can be documented as a JSON schema."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url&port",
+			"value": "127.0.0.1:8080"
+		}
+	]
+}
